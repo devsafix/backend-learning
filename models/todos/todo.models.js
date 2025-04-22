@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const todoSchema = new mongoose.Schema(
   {
@@ -6,18 +6,18 @@ const todoSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    complate: {
+    complete: {
       type: Boolean,
       default: false,
     },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      ref: "User",
     },
     subTodos: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'SubTodo',
+        ref: "SubTodo",
       },
     ],
   },
@@ -26,4 +26,4 @@ const todoSchema = new mongoose.Schema(
   }
 );
 
-export const Todo = mongoose.model('Todo', todoSchema);
+export const Todo = mongoose.model("Todo", todoSchema);

@@ -1,7 +1,6 @@
-import { Timestamp } from 'bson';
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const userschema = mongoose.Schema(
+const userSchema = mongoose.Schema(
   {
     userName: {
       type: String,
@@ -17,13 +16,13 @@ const userschema = mongoose.Schema(
     },
     password: {
       type: String,
-      required: [true, 'password is required'],
+      required: [true, "password is required"],
       unique: true,
     },
   },
   {
-    Timestamp: true,
+    timestamp: true,
   }
 );
 
-export const User = mongoose.model('User', userschema);
+export const User = mongoose.model("User", userSchema);

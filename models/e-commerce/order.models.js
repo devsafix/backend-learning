@@ -1,9 +1,9 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const orderItemSchema = new mongoose.Schema({
   productId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Product',
+    ref: "Product",
   },
   quantity: {
     type: Number,
@@ -19,7 +19,7 @@ const orderSchema = new mongoose.Schema(
     },
     customer: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      ref: "User",
     },
     orderItems: {
       type: [orderItemSchema],
@@ -30,8 +30,8 @@ const orderSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ['PENDING', 'CANCELLED', 'DELIVERED'],
-      default: 'PENDING',
+      enum: ["PENDING", "CANCELLED", "DELIVERED"],
+      default: "PENDING",
     },
   },
   {
@@ -39,4 +39,4 @@ const orderSchema = new mongoose.Schema(
   }
 );
 
-export const Order = mongoose.model('Order', orderSchema);
+export const Order = mongoose.model("Order", orderSchema);
