@@ -15,7 +15,19 @@ const medicalRecordSchema = new mongoose.Schema(
     diagnosis: {
       type: String,
       required: true,
+      ref: "Doctor",
+      required: true,
     },
+    diagnosis: {
+      type: String,
+      required: true,
+    },
+    ref: "Doctor",
+    required: true,
+  },
+  diagnosis: {
+    type: String,
+    required: true,
     treatment: {
       type: String,
       required: true,
